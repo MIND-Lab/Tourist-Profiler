@@ -1,4 +1,8 @@
-# Profiler Models
+# Tourist Profiler
+
+This work was supported by the research project RASTA: Realtá Aumentata e Story-Telling Automatizzato 
+per la valorizzazione di Beni Culturali ed Itinerari; funded by the Italian Ministry of University 
+and Research (MUR) under the PON Project ARS01\_00540.
 
 ## Dataset
 
