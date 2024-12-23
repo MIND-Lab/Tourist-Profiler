@@ -110,28 +110,34 @@ class Dataset(object):
         merged_df = ratings.merge(expanded_dataframe[['MovieID', 'Genres']], on='MovieID', how='left')
         merged_df = merged_df[['UserID', 'MovieID', 'Genres', 'Rating', 'Timestamp']]
         
-        # We convert the string values of the genres to numeric values.
+        # We convert the string values of the genres to numeric values.  
+        # To reproduce the experiments you need to modify the code below.    
+        #############################  MODIFY HERE  #############################  
         genre_mapping = {
             'Action': 0,
             'Adventure': 1,
-            'Animation': 2,
-            'Children\'s': 3,
-            'Comedy': 4,
-            'Crime': 5,
+            'Comedy': 2,
+            'Drama': 3,
+            'Romance': 4,
+            'Thriller': 5,
+            'Animation': 6,
+            'Children\'s': 6,
+            'Crime': 6,
             'Documentary': 6,
-            'Drama': 7,
-            'Fantasy': 8,
-            'Film-Noir': 9,
-            'Horror': 10,
-            'Musical': 11,
-            'Mystery': 12,
-            'Romance': 13,
-            'Sci-Fi': 14,
-            'Thriller': 15,
-            'War': 16,
-            'Western': 17
+            'Fantasy': 6,
+            'Film-Noir': 6,
+            'Horror': 6,
+            'Musical': 6,
+            'Mystery': 6,
+            'Sci-Fi': 6,
+            'War': 6,
+            'Western': 6
         }
         merged_df['Genres'] = merged_df['Genres'].apply(lambda genre: genre_mapping.get(genre, 0))
+        
+        merged_df = merged_df[merged_df['Genres'] != 6]
+        #############################  MODIFY HERE  #############################
+        
         
         # We rename the 'Genres' column to 'CategoryID'.
         merged_df.rename(columns={'Genres': 'CategoryID'}, inplace=True)

@@ -115,7 +115,9 @@ class Dataset(object):
         merged_df = ratings.merge(expanded_dataframe[['MovieID', 'Genres']], on='MovieID', how='left')
         merged_df = merged_df[['UserID', 'MovieID', 'Genres', 'Rating', 'Timestamp']]
         
-        # We convert the string values of the genres to numeric values.        
+        # We convert the string values of the genres to numeric values.  
+        # To reproduce the experiments you need to modify the code below.    
+        #############################  MODIFY HERE  #############################  
         genre_mapping = {
             'Action': 0,
             'Adventure': 1,
@@ -137,6 +139,9 @@ class Dataset(object):
             'Western': 6
         }
         merged_df['Genres'] = merged_df['Genres'].apply(lambda genre: genre_mapping.get(genre, 0))
+        
+        merged_df = merged_df[merged_df['Genres'] != 6]
+        #############################  MODIFY HERE  #############################
         
         merged_df = merged_df[merged_df['Genres'] != 6]
         
