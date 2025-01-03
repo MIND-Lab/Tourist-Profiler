@@ -31,6 +31,21 @@ Below is an image representation of the DQN model:
 ![DQN](./img/RASTA%20-%20DQN.png)
 
 ## HRL
+The `hrl` folder contains the implementation of the HRL (Hierarchical Reinforcement learning) model, combined with a Matrix Factorization model designed to infer the missing values in the Profile. It includes the following files:
+
+- **`Agent.py`**: Contains the implementation of the HRL agent.
+- **`Environment.py`**: Contains the implementation of the environment used
+for the model.
+- **`Recommender.py`**: Contains the implementation of the NAIS recommender model used combined with HRL agent.
+- **`DataMovielens.py`**: Implements methods for managing the dataset.
+- **`Settings.py`**: Includes the configuration settings for the HRL model
+- **`Evaluation.py`**: Implements the calculation of some evaluation metrics for the model
+- **`Utils.py`**: Implements some functions for training and evaluating the model
+
+### Visualization
+
+Below is an image representation of the HRL model:  
+![HRL](./img/RASTA%20-%20HRL.png)
 
 ## Profile Models
 
